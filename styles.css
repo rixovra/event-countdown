@@ -1,32 +1,43 @@
 h1 {
-    font-family: "Copperplate", Fantasy;
+    font-family: 'Bagel Fat One', cursive;
+    font-size: 80px;
     color: #d7e8ff;
 }
 
+
 body {
     text-align: center;
-    font-family: Verdana, sans-serif;
-    color:#d7e8ff
-    margin-top: 50px;
+    font-family: 'Dongle', sans-serif;
+    color: #d7e8ff;
+    margin-top: 30px;
     background-color: #021630;
+    font-size: 40px;
 }
-  
+
 #countdown {
-    font-size: 30px;
+    font-size: 50px;
     margin-top: 20px;
     color: #d0eaff;
 }
 
 input, button {
-    padding: 10px;
-    font-size: 16px;
-    margin: 5px;
+    font-family: 'Dongle', sans-serif;
+    padding: 15px 30px;
+    font-size: 30px; 
+    margin: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 button {
     cursor: pointer;
-    background-color: #f2f4ff;
+    background-color: #6d77b1;
     color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
+button:hover {
+    background-color: #aebeff;
+    transform: scale(1.05);
+}
+

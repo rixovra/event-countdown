@@ -20,7 +20,7 @@ function startCountdown() {
     } else if (diff < 0) {
       document.getElementById("countdown").innerHTML ="D + " + Math.abs(diff) ;
     } else {
-      document.getElementById("countdown").innerHTML = "D- DAY!";
+      document.getElementById("countdown").innerHTML = "D - DAY!";
     }
 }
     
