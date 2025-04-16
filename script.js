@@ -2,7 +2,7 @@
 let countdownTimer;
 
 function startCountdown() {
-  clearInterval(countdownTimer); // Stop any previous countdown
+  clearInterval(countdownTimer);
   const userDate = document.getElementById("eventInput").value;
   const eventTime = new Date(userDate).getTime();
 
@@ -17,7 +17,7 @@ function startCountdown() {
 
     if (timeLeft < 0) {
       clearInterval(countdownTimer);
-      document.getElementById("countdown").innerHTML = "🎉 Event started!";
+      document.getElementById("countdown").innerHTML = "Event started!";
       return;
     }
 
@@ -27,6 +27,6 @@ function startCountdown() {
     const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
     document.getElementById("countdown").innerHTML =
-      days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+      days + "Days " + hours + "Hours " + minutes + "Minutes " + seconds + "Seconds";
   }, 1000);
 }
