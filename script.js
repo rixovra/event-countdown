@@ -1,22 +1,26 @@
 function startCountdown() {
     const userDate = document.getElementById("eventInput").value;
-    const eventTime = new Date(userDate).setHours(0, 0, 0, 0); // Ignore time part
-    const now = new Date().setHours(0, 0, 0, 0); // Current day, midnight
   
-    if (isNaN(eventTime)) {
+    if (!userDate) {
       document.getElementById("countdown").innerHTML = "Please select a valid date.";
       return;
     }
   
+    const eventDate = new Date(userDate);
+    eventDate.setHours(0, 0, 0, 0);
+  
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+  
     const oneDay = 1000 * 60 * 60 * 24;
-    const diff = Math.floor((eventTime - now) / oneDay);
+    const diff = Math.floor((eventDate - today) / oneDay);
   
     if (diff > 0) {
-      document.getElementById("countdown").innerHTML = diff + " day(s) left until the event.";
+      document.getElementById("countdown").innerHTML = "D - " + diff ;
     } else if (diff < 0) {
-      document.getElementById("countdown").innerHTML = Math.abs(diff) + " day(s) have passed since the event.";
+      document.getElementById("countdown").innerHTML ="D + " + Math.abs(diff) ;
     } else {
-      document.getElementById("countdown").innerHTML = "The event is today!";
+      document.getElementById("countdown").innerHTML = "D- DAY!";
     }
-  }
-  
+}
+    
