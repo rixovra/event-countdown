@@ -7,7 +7,7 @@ function startCountdown() {
   const eventTime = new Date(userDate).getTime();
 
   if (isNaN(eventTime)) {
-    document.getElementById("countdown").innerHTML = "Please select a valid date.";
+    document.getElementById("countdown").innerHTML = "Choose a valid date.";
     return;
   }
 
@@ -27,6 +27,6 @@ function startCountdown() {
     const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
     document.getElementById("countdown").innerHTML =
-      days + "Days " + hours + "Hours " + minutes + "Minutes " + seconds + "Seconds";
+      days + "D " + hours + "H " + minutes + "M " + seconds + "S";
   }, 1000);
 }
