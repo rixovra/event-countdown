@@ -1,32 +1,22 @@
-
-let countdownTimer;
-
 function startCountdown() {
-  clearInterval(countdownTimer);
-  const userDate = document.getElementById("eventInput").value;
-  const eventTime = new Date(userDate).getTime();
-
-  if (isNaN(eventTime)) {
-    document.getElementById("countdown").innerHTML = "Choose a valid date.";
-    return;
-  }
-
-  countdownTimer = setInterval(function () {
-    const now = new Date().getTime();
-    const timeLeft = eventTime - now;
-
-    if (timeLeft < 0) {
-      clearInterval(countdownTimer);
-      document.getElementById("countdown").innerHTML = "Event started!";
+    const userDate = document.getElementById("eventInput").value;
+    const eventTime = new Date(userDate).setHours(0, 0, 0, 0); // Ignore time part
+    const now = new Date().setHours(0, 0, 0, 0); // Current day, midnight
+  
+    if (isNaN(eventTime)) {
+      document.getElementById("countdown").innerHTML = "Please select a valid date.";
       return;
     }
-
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-    document.getElementById("countdown").innerHTML =
-      days + "D " + hours + "H " + minutes + "M " + seconds + "S";
-  }, 1000);
-}
+  
+    const oneDay = 1000 * 60 * 60 * 24;
+    const diff = Math.floor((eventTime - now) / oneDay);
+  
+    if (diff > 0) {
+      document.getElementById("countdown").innerHTML = diff + " day(s) left until the event.";
+    } else if (diff < 0) {
+      document.getElementById("countdown").innerHTML = Math.abs(diff) + " day(s) have passed since the event.";
+    } else {
+      document.getElementById("countdown").innerHTML = "The event is today!";
+    }
+  }
+  
