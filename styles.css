@@ -41,3 +41,12 @@ button:hover {
     transform: scale(1.05);
 }
 
+.event {
+    background-color: #031c3d;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+    max-width: 600px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  }
+  
