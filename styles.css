@@ -4,7 +4,6 @@ h1 {
     color: #d7e8ff;
 }
 
-
 body {
     text-align: center;
     font-family: 'Dongle', sans-serif;
@@ -23,7 +22,7 @@ body {
 input, button {
     font-family: 'Dongle', sans-serif;
     padding: 15px 30px;
-    font-size: 30px; 
+    font-size: 30px;
     margin: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -31,14 +30,11 @@ input, button {
 
 button {
     cursor: pointer;
-    background-color: #6d77b1;
-    color: white;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: #aebeff;
 }
 
 button:hover {
-    background-color: #aebeff;
-    transform: scale(1.05);
+    background-color: #d1dcff;
 }
 
 .event {
@@ -47,6 +43,5 @@ button:hover {
     margin: 20px auto;
     border-radius: 15px;
     max-width: 600px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  }
-  
+}
+
