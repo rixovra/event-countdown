@@ -1,22 +1,22 @@
 h1 {
     font-family: 'Bagel Fat One', cursive;
     font-size: 80px;
-    color: #d7e8ff;
+    color: #e6e6e6; /* soft off-white for contrast */
 }
 
 body {
     text-align: center;
     font-family: 'Dongle', sans-serif;
-    color: #d7e8ff;
+    color: #d1d1d1; /* soft light gray for main text */
     margin-top: 30px;
-    background-color: #021630;
+    background-color: #1c1e2a; /* deep navy blue */
     font-size: 40px;
 }
 
 #countdown {
     font-size: 50px;
     margin-top: 20px;
-    color: #d0eaff;
+    color: #b0b0b0; /* soft gray for countdown text */
 }
 
 input, button {
@@ -24,24 +24,26 @@ input, button {
     padding: 15px 30px;
     font-size: 30px;
     margin: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #3a3a3a; /* dark gray for input borders */
     border-radius: 10px;
+    background-color: #2b2e3b; /* dark, muted grayish blue */
+    color: #e6e6e6; /* soft off-white for input text */
 }
 
 button {
     cursor: pointer;
-    background-color: #aebeff;
+    background-color: #3a3a3a; /* dark gray for buttons */
 }
 
 button:hover {
-    background-color: #cfdaff;
+    background-color: #50555c; /* slightly lighter gray for hover */
 }
 
 .event {
-    background-color: #031c3d;
+    background-color: #2b2e3b; /* dark muted blue-gray */
     padding: 20px;
     margin: 20px auto;
     border-radius: 15px;
     max-width: 600px;
+    color: #e6e6e6; /* soft off-white for event text */
 }
-
