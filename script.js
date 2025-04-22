@@ -17,6 +17,8 @@ function addEvent() {
   document.getElementById("eventInput").value = "";
 }
 
+document.getElementById("addEventBtn").addEventListener("click", addEvent);
+
 function loadEvents() {
   renderEvents();
 }
@@ -84,3 +86,4 @@ function getStoredEvents() {
 function saveEvents(events) {
   localStorage.setItem("events", JSON.stringify(events));
 }
+1
