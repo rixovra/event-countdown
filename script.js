@@ -17,8 +17,6 @@ function addEvent() {
   document.getElementById("eventInput").value = "";
 }
 
-document.getElementById("addEventBtn").addEventListener("click", addEvent);
-
 function loadEvents() {
   renderEvents();
 }
