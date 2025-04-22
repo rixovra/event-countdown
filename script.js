@@ -1,89 +1,64 @@
-document.addEventListener("DOMContentLoaded", loadEvents);
+let events = [];
+
+window.onload = function () {
+  document.getElementById("addEventBtn").onclick = addEvent;
+};
 
 function addEvent() {
-  const userDate = document.getElementById("eventInput").value;
-  const userName = document.getElementById("eventNameInput").value || "Untitled Event";
+  let name = document.getElementById("eventNameInput").value;
+  let date = document.getElementById("eventInput").value;
 
-  if (!userDate) {
-    alert("Please select a valid date.");
+  if (!date) {
+    alert("Please choose a date!");
     return;
   }
 
-  const events = getStoredEvents();
-  events.push({ name: userName, date: userDate });
-  saveEvents(events);
-  renderEvents();
+  if (!name) {
+    name = "Untitled Event";
+  }
+
+  events.push({ name: name, date: date });
+  showEvents();
+
   document.getElementById("eventNameInput").value = "";
   document.getElementById("eventInput").value = "";
 }
 
-document.getElementById("addEventBtn").addEventListener("click", addEvent);
+function showEvents() {
+  let box = document.getElementById("eventsList");
+  box.innerHTML = "";
 
-function loadEvents() {
-  renderEvents();
-}
-
-function renderEvents() {
-  const events = getStoredEvents();
-  events.sort((a, b) => new Date(a.date) - new Date(b.date));
-
-  const container = document.getElementById("eventsList");
-  container.innerHTML = "";
-
-  const today = new Date();
+  let today = new Date();
   today.setHours(0, 0, 0, 0);
-  const oneDay = 1000 * 60 * 60 * 24;
 
-  events.forEach((event, index) => {
-    const eventDate = new Date(event.date);
+  for (let i = 0; i < events.length; i++) {
+    let event = events[i];
+    let eventDate = new Date(event.date);
     eventDate.setHours(0, 0, 0, 0);
-    const diff = Math.floor((eventDate - today) / oneDay);
 
-    let countdownText = "";
-    if (diff > 0) {
-      countdownText = "D - " + diff;
-    } else if (diff < 0) {
-      countdownText = "D + " + Math.abs(diff);
+    let days = Math.floor((eventDate - today) / (1000 * 60 * 60 * 24));
+
+    let text = "";
+    if (days > 0) {
+      text = "D - " + days;
+    } else if (days < 0) {
+      text = "D + " + Math.abs(days);
     } else {
-      countdownText = "D - DAY!";
+      text = "D - DAY!";
     }
 
-    const eventDiv = document.createElement("div");
-    eventDiv.classList.add("event");
+    let div = document.createElement("div");
+    div.className = "event";
+    div.innerHTML = "<h2>" + event.name + "</h2><p>" + text + "</p>";
 
-    const title = document.createElement("h2");
-    title.textContent = event.name;
-    eventDiv.appendChild(title);
+    let delBtn = document.createElement("button");
+    delBtn.innerText = "Delete";
+    delBtn.onclick = function () {
+      events.splice(i, 1);
+      showEvents();
+    };
 
-    const countdown = document.createElement("div");
-    countdown.textContent = countdownText;
-    countdown.style.marginTop = "10px";
-    countdown.style.fontSize = "40px";
-    countdown.style.color = "#d0eaff";
-    eventDiv.appendChild(countdown);
-
-    const deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "Delete";
-    deleteBtn.style.marginTop = "10px";
-    deleteBtn.onclick = () => deleteEvent(index);
-    eventDiv.appendChild(deleteBtn);
-
-    container.appendChild(eventDiv);
-  });
+    div.appendChild(delBtn);
+    box.appendChild(div);
+  }
 }
-
-function deleteEvent(index) {
-  const events = getStoredEvents();
-  events.splice(index, 1);
-  saveEvents(events);
-  renderEvents();
-}
-
-function getStoredEvents() {
-  return JSON.parse(localStorage.getItem("events") || "[]");
-}
-
-function saveEvents(events) {
-  localStorage.setItem("events", JSON.stringify(events));
-}
-1
