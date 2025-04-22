@@ -31,6 +31,8 @@ function showEvents() {
   let today = new Date();
   today.setHours(0, 0, 0, 0);
 
+  events.sort((a, b) => new Date(a.date) - new Date(b.date));
+
   for (let i = 0; i < events.length; i++) {
     let event = events[i];
     let eventDate = new Date(event.date);
@@ -49,9 +51,13 @@ function showEvents() {
 
     let div = document.createElement("div");
     div.className = "event";
-    div.innerHTML = "<h2>" + event.name + "</h2><p>" + text + "</p>";
+
+    let formattedDate = eventDate.getFullYear() + "." + (eventDate.getMonth() + 1).toString().padStart(2, "0") + "." + eventDate.getDate().toString().padStart(2, "0");
+
+    div.innerHTML = "<h2>" + event.name + "</h2><p>" + text + "</p><p><strong>Date:</strong> " + formattedDate + "</p>";
 
     let delBtn = document.createElement("button");
+    delBtn.className = "delete";
     delBtn.innerText = "Delete";
     delBtn.onclick = function () {
       events.splice(i, 1);
