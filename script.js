@@ -9,12 +9,12 @@ function addEvent() {
   let date = document.getElementById("eventInput").value;
 
   if (!date) {
-    alert("Please choose a valid date!");
+    alert("Choose a valid date");
     return;
   }
 
   if (!name) {
-    name = "Untitled Event";
+    name = "Untitled";
   }
 
   events.push({ name: name, date: date });
@@ -54,11 +54,11 @@ function showEvents() {
 
     let formattedDate = eventDate.getFullYear() + "." + (eventDate.getMonth() + 1).toString().padStart(2, "0") + "." + eventDate.getDate().toString().padStart(2, "0");
 
-    div.innerHTML = "<h2>" + event.name + "</h2><p>" + text + "</p><p><strong>Date:</strong> " + formattedDate + "</p>";
+    div.innerHTML = "<h2>" + event.name + "</h2><p>" + text + "</p><p><strong>Event date:</strong> " + formattedDate + "</p>";
 
     let delBtn = document.createElement("button");
     delBtn.className = "delete";
-    delBtn.innerText = "Delete";
+    delBtn.innerText = "DELETE";
     delBtn.onclick = function () {
       events.splice(i, 1);
       showEvents();
