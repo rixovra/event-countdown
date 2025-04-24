@@ -24,15 +24,15 @@ input, button {
     padding: 15px 30px;
     font-size: 30px;
     margin: 10px;
-    border: 1px solid #3a3a3a; /* dark gray for input borders */
+    border: 1px solid #2a2b35; /* dark gray for input borders */
     border-radius: 10px;
-    background-color: #2b2e3b; /* dark, muted grayish blue */
+    background-color: #30323d; /* dark, muted grayish blue */
     color: #e6e6e6; /* soft off-white for input text */
 }
 
 button {
     cursor: pointer;
-    background-color: #3a3a3a; /* dark gray for buttons */
+    background-color: rgb(64, 66, 71); /* dark gray for buttons */
 }
 
 button:hover {
