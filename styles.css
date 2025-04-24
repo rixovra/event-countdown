@@ -7,9 +7,9 @@ h1 {
 body {
     text-align: center;
     font-family: 'Dongle', sans-serif;
-    color: #d1d1d1;
+    color: #cfcfce;
     margin-top: 30px;
-    background-color: #1c1e2a;
+    background-color: #161820;
     font-size: 40px;
 }
 
@@ -32,7 +32,7 @@ input, button {
 
 button {
     cursor: pointer;
-    background-color: rgb(64, 66, 71);
+    background-color: rgb(38, 39, 43);
 }
 
 button:hover {

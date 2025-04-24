@@ -9,7 +9,7 @@ function addEvent() {
   let date = document.getElementById("eventInput").value;
 
   if (!date) {
-    alert("Please choose a date!");
+    alert("Please choose a valid date!");
     return;
   }
 
