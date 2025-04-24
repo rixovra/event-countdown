@@ -1,22 +1,22 @@
 h1 {
     font-family: 'Bagel Fat One', cursive;
     font-size: 80px;
-    color: #e6e6e6; /* soft off-white for contrast */
+    color: #e6e6e6;
 }
 
 body {
     text-align: center;
     font-family: 'Dongle', sans-serif;
-    color: #d1d1d1; /* soft light gray for main text */
+    color: #d1d1d1;
     margin-top: 30px;
-    background-color: #1c1e2a; /* deep navy blue */
+    background-color: #1c1e2a;
     font-size: 40px;
 }
 
 #countdown {
     font-size: 50px;
     margin-top: 20px;
-    color: #b0b0b0; /* soft gray for countdown text */
+    color: #b0b0b0;
 }
 
 input, button {
@@ -24,26 +24,26 @@ input, button {
     padding: 15px 30px;
     font-size: 30px;
     margin: 10px;
-    border: 1px solid #2a2b35; /* dark gray for input borders */
+    border: 1px solid #2a2b35;
     border-radius: 10px;
-    background-color: #30323d; /* dark, muted grayish blue */
-    color: #e6e6e6; /* soft off-white for input text */
+    background-color: #30323d;
+    color: #e6e6e6;
 }
 
 button {
     cursor: pointer;
-    background-color: rgb(64, 66, 71); /* dark gray for buttons */
+    background-color: rgb(64, 66, 71);
 }
 
 button:hover {
-    background-color: #50555c; /* slightly lighter gray for hover */
+    background-color: #50555c; 
 }
 
 .event {
-    background-color: #2b2e3b; /* dark muted blue-gray */
+    background-color: #2b2e3b;
     padding: 20px;
     margin: 20px auto;
     border-radius: 15px;
     max-width: 600px;
-    color: #e6e6e6; /* soft off-white for event text */
+    color: #e6e6e6;
 }
